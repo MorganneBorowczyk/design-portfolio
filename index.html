@@ -11,12 +11,31 @@
     <meta description="Morganne Borowczyk is a French designer and illustrator">
   </head>
   <body>
-    <div class="container">
-      <div class="intro">
-        <h1>Morganne Borowczyk</h1>
-        <h2>Designer and illustrator from France</h2>
-        <p>Coming Soon</p>
+    <main class="container">
+      <div class="sidebar">
+        <p class="h1">Morganne Borowczyk</p>
+        <p class="h2">Illustrator and designer : Portfolio</p>
+        <nav><a href="" alt="">About me</a>
+          <p>Projects:</p><a href="" alt="">Toile de Jouy</a><a href="" alt="">Déjeuner sur l'Herbe</a><a href="" alt="">One More Time with Feeling</a><a href="" alt="">Holispark</a><a href="" alt="">Verminoise</a><a href="" alt="">Jethro Morris</a><a href="" alt="">Balmonts</a><a href="" alt="">Tarot deck</a>
+        </nav>
+        <footer>
+          <div class="container">
+            <div class="social"><a href="http://instagram.com/morganneborowczyk">instagram</a><a href="http://facebook.com/mborowczykillustration">facebook</a><a href="http://dribbble.com/morganneborowczyk">dribbble</a></div>
+            <div class="copyright">
+              <p>© Morganne Borowczyk 2018 — All rights reserved.</p>
+            </div>
+          </div>
+        </footer>
       </div>
-    </div>
+      <div class="content">
+        <div class="grid"><a href="" title="Project name" class="grid-item"><img src="assets/images/work/illu-MAD.jpg" alt="project name"></a><a href="" title="Project name" class="grid-item"><img src="assets/images/work/dejeuner-sur-lherbe.jpg" alt="project name"></a><a href="" title="Project name" class="grid-item"><img src="assets/images/work/toile-de-jouy.png" alt="project name"></a></div>
+        <script src="assets/js/masonry.pkgd.min.js"></script>
+        <script>
+          var msnry = new Masonry( '.grid', {
+          itemSelector: '.grid-item'
+          });
+        </script>
+      </div>
+    </main>
   </body>
 </html>
