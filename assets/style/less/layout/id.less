@@ -1,0 +1,30 @@
+//main: ../app.less
+
+.id {
+  // display: -webkit-flex;
+  // display: -ms-flex;
+  // display: flex;
+  // align-items: center;
+  // justify-content: space-between;
+  .visuel {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    background-color: @dark-grey;
+    img {
+      position: absolute;
+      opacity: .8;
+      // max-width: none;
+      // max-height: 100%;
+    }
+    h1 {
+      position: relative;
+      text-align: center;
+      color: @background-color;
+    }
+  }
+}
