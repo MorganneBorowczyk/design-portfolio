@@ -1,0 +1,34 @@
+//output:../index.html, pretty:true
+
+extend _layout.jade
+
+block var
+  - page = "Home"
+  - description = "Morganne Borowczyk is a French designer and illustrator"
+
+block content
+  //- include _grid.jade
+  .grid
+    .grid-sizer
+    .gutter-sizer
+    //- .grid-item--width2
+    .grid-item
+      img(src="assets/images/work/MAD-1.jpg" alt="project name")
+    .grid-item
+      img(src="assets/images/work/MAD-2.jpg" alt="project name")
+    .grid-item
+      img(src="assets/images/work/MAD-3.jpg" alt="project name")
+    .grid-item
+      img(src="assets/images/work/dejeuner-sur-lherbe.jpg" alt="project name")
+    .grid-item
+      img(src="assets/images/work/toile-de-jouy.png" alt="project name")
+
+  script(src="assets/js/masonry.pkgd.min.js")
+
+  script.
+    $('.grid').masonry({
+      itemSelector: '.grid-item',
+      columnWidth: '.grid-sizer',
+      gutter: '.gutter-sizer',
+      percentPosition: true
+    });

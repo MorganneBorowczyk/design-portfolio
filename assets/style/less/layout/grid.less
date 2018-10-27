@@ -1,0 +1,36 @@
+//main: ../app.less
+
+// Masonry
+
+.grid {
+  position: relative;
+  .grid-sizer,
+  .grid-item {
+    width: calc(~"50% - 10px");
+  }
+  .grid-item {
+    margin-bottom: 20px;
+  }
+
+  .gutter-sizer { width: 20px; }
+
+  .grid-item.grid-item--width2 { width: 100%; }
+}
+
+@media screen and (min-width: @screen-small) {
+  .grid {
+    .grid-sizer,
+    .grid-item {
+      width: calc(~"32.9% - 10px");
+    }
+  }
+}
+
+@media screen and (min-width: @screen-medium) {
+  .grid {
+    .grid-sizer,
+    .grid-item {
+      width: calc(~"25.3% - 20px");
+    }
+  }
+}
