@@ -12,16 +12,12 @@ block content
     .grid-sizer
     .gutter-sizer
     //- .grid-item--width2
-    .grid-item
-      img(src="assets/images/work/MAD-1.jpg" alt="project name")
-    .grid-item
-      img(src="assets/images/work/MAD-2.jpg" alt="project name")
-    .grid-item
-      img(src="assets/images/work/MAD-3.jpg" alt="project name")
-    .grid-item
-      img(src="assets/images/work/dejeuner-sur-lherbe.jpg" alt="project name")
-    .grid-item
-      img(src="assets/images/work/toile-de-jouy.png" alt="project name")
+    
+    +grid-item("project-mad","modal-project-mad", "assets/images/work/MAD-1.jpg", "Musée des Arts Décoratifs", "width2", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem quam numquam earum nobis, eligendi consequuntur praesentium, repellat, hic libero labore impedit provident et reiciendis illo dignissimos aperiam officia, tempore incidunt?")
+    
+    +grid-item("dejeuner","modal-dejeuner", "assets/images/work/dejeuner-sur-lherbe.jpg", "Déjeuner sur l'Herbe", "", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem quam numquam earum nobis, eligendi consequuntur praesentium, repellat, hic libero labore impedit provident et reiciendis illo dignissimos aperiam officia, tempore incidunt?")
+
+    +grid-item("toile-de-jouy","modal-toile-de-jouy", "assets/images/work/toile-de-jouy.png", "Toile de Jouy", "", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem quam numquam earum nobis, eligendi consequuntur praesentium, repellat, hic libero labore impedit provident et reiciendis illo dignissimos aperiam officia, tempore incidunt?")
 
   script(src="assets/js/masonry.pkgd.min.js")
 

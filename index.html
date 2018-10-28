@@ -9,6 +9,7 @@
     <meta description="Morganne Borowczyk is a French designer and illustrator">
     <link rel="stylesheet" href="assets/style/css/app.css">
     <link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700" rel="stylesheet">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
@@ -77,20 +78,50 @@
       <div class="content">
         <div class="grid">
           <div class="grid-sizer"></div>
-          <div class="gutter-sizer"></div>
-          <div class="grid-item"><img src="assets/images/work/MAD-1.jpg" alt="project name"></div>
-          <div class="grid-item"><img src="assets/images/work/MAD-2.jpg" alt="project name"></div>
-          <div class="grid-item"><img src="assets/images/work/MAD-3.jpg" alt="project name"></div>
-          <div class="grid-item"><img src="assets/images/work/dejeuner-sur-lherbe.jpg" alt="project name"></div>
-          <div class="grid-item"><img src="assets/images/work/toile-de-jouy.png" alt="project name"></div>
+          <div class="gutter-sizer"></div><a href="#modal-project-mad" class="grid-item width2"><img src="assets/images/work/MAD-1.jpg" alt="Musée des Arts Décoratifs"></a>
+              <div id="modal-project-mad" class="modal">
+                <div class="modal-content">
+                  <h2>Musée des Arts Décoratifs</h2>
+                  <div class="close">Close</div><img src="assets/images/work/MAD-1.jpg">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem quam numquam earum nobis, eligendi consequuntur praesentium, repellat, hic libero labore impedit provident et reiciendis illo dignissimos aperiam officia, tempore incidunt?</p>
+                </div>
+              </div><a href="#modal-dejeuner" class="grid-item"><img src="assets/images/work/dejeuner-sur-lherbe.jpg" alt="Déjeuner sur l'Herbe"></a>
+              <div id="modal-dejeuner" class="modal">
+                <div class="modal-content">
+                  <h2>Déjeuner sur l'Herbe</h2>
+                  <div class="close">Close</div><img src="assets/images/work/dejeuner-sur-lherbe.jpg">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem quam numquam earum nobis, eligendi consequuntur praesentium, repellat, hic libero labore impedit provident et reiciendis illo dignissimos aperiam officia, tempore incidunt?</p>
+                </div>
+              </div><a href="#modal-toile-de-jouy" class="grid-item"><img src="assets/images/work/toile-de-jouy.png" alt="Toile de Jouy"></a>
+              <div id="modal-toile-de-jouy" class="modal">
+                <div class="modal-content">
+                  <h2>Toile de Jouy</h2>
+                  <div class="close">Close</div><img src="assets/images/work/toile-de-jouy.png">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem quam numquam earum nobis, eligendi consequuntur praesentium, repellat, hic libero labore impedit provident et reiciendis illo dignissimos aperiam officia, tempore incidunt?</p>
+                </div>
+              </div>
         </div>
         <script src="assets/js/masonry.pkgd.min.js"></script>
         <script>
+          //- Masonry
           $('.grid').masonry({
             itemSelector: '.grid-item',
             columnWidth: '.grid-sizer',
             gutter: '.gutter-sizer',
             percentPosition: true
+          });
+          
+          
+        </script>
+        <script>
+          //- Trigger modals
+          $('.grid-item').on('click', function(){
+            var modalTarget = $(this).attr('href');
+            console.log(modalTarget);
+            $(modalTarget).addClass('visible');
+          });
+          $('.modal .close').on('click', function(){
+            $(this).parents('.modal').removeClass('visible');
           });
         </script>
       </div>
