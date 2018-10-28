@@ -52,6 +52,15 @@ header {
         bottom: -6px;
       }
     }
+    &:hover {
+      span {
+        &,
+        &::before,
+        &::after {
+          background-color: @accent-color;
+        }
+      }
+    }
   }
   .menu {
     background-color: @filter-color;
