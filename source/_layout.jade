@@ -43,6 +43,10 @@ html(lang="en")
                 use(fill=color xlink:href="#dribbble-a")
                 g(fill=color mask="url(#dribbble-b)")
                   rect(width="100" height="100" transform="translate(-35 -35)")
+    mixin btn-large(text, link)
+      a.btn.btn-large(href=link)= text
+    mixin btn-small(text, link)
+      a.btn.btn-small(href=link)= text
     
     include _header.jade
   

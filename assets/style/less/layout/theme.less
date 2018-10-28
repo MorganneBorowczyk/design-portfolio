@@ -23,8 +23,41 @@ h6, .h6 {
 a {
   color: @muted-font-color;
 }
+.btn {
+  background-color: @accent-color;
+  color: @background-color;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  @media screen and (min-width: @screen-xs) {
+    display: inline-block;
+  }
+  &.btn-small {
+    font-size: 14px;
+    padding: 10px 30px;
+    letter-spacing: 5px;
+  }
+  &.btn-large {
+    font-size: 20px;
+    padding: 15px 40px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+  }
+}
 .container {
   max-width: 1366px;
   margin: 0 auto;
   padding: 0 20px;
+}
+p {
+  font-style: italic;
+  &.cta {
+    color: @black;
+    text-align: center;
+    font-style: normal;
+    margin: 50px 30px 30px;
+  }
+}
+.txt-center {
+  text-align: center;
 }
