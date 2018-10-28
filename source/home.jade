@@ -36,8 +36,16 @@ block content
     $('.grid-item').on('click', function(){
       var modalTarget = $(this).attr('href');
       console.log(modalTarget);
-      $(modalTarget).addClass('visible');
+      $(modalTarget).addClass('ready');
+      setTimeout(function(){
+        $(modalTarget).addClass('visible');
+      },50);
+      $('body').addClass('stuck');
     });
     $('.modal .close').on('click', function(){
       $(this).parents('.modal').removeClass('visible');
+      setTimeout(function(){
+        $('.modal').removeClass('ready');
+      },100);
+      $('body').removeClass('stuck');
     });

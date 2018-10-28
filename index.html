@@ -9,7 +9,6 @@
     <meta description="Morganne Borowczyk is a French designer and illustrator">
     <link rel="stylesheet" href="assets/style/css/app.css">
     <link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700" rel="stylesheet">
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
@@ -118,10 +117,18 @@
           $('.grid-item').on('click', function(){
             var modalTarget = $(this).attr('href');
             console.log(modalTarget);
-            $(modalTarget).addClass('visible');
+            $(modalTarget).addClass('ready');
+            setTimeout(function(){
+              $(modalTarget).addClass('visible');
+            },50);
+            $('body').addClass('stuck');
           });
           $('.modal .close').on('click', function(){
             $(this).parents('.modal').removeClass('visible');
+            setTimeout(function(){
+              $('.modal').removeClass('ready');
+            },100);
+            $('body').removeClass('stuck');
           });
         </script>
       </div>

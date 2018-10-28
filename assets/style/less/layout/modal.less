@@ -13,15 +13,16 @@
   min-height: 100vh;
   overflow: auto;
   padding: 10px;
-  &.visible {
-    display: block;
-  }
+  opacity: 0;
+  transition: .3s;
   .modal-content {
     background-color: @background-color;
     max-width: 1000px;
     margin: 0 auto;
     position: relative;
     box-shadow: 0 7px 30px @filter-color-smooth;
+    transform: translateY(100%);
+    transition: transform .3s .3s @ease;
     h2 {
       text-align: center;
       color: @accent-color;
@@ -47,6 +48,15 @@
     transition: color .3s @ease;
     &:hover {
       color: @accent-color;
+    }
+  }
+  &.ready {
+    display: block;
+  }
+  &.visible {
+    opacity: 1;
+    .modal-content {
+      transform: translateY(0);
     }
   }
   @media screen and (min-width: @screen-xs) {
