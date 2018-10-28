@@ -50,15 +50,18 @@ html(lang="en")
     mixin btn-small(text, link)
       a.btn.btn-small(href=link)= text
       
-    mixin grid-item(id, target, source, name, size, content)
+    mixin grid-item(name, id, size, target, source, source2, source3)
       a.grid-item(class=size href="#"+target)
-        img(src=source alt=name)  
+        img(src="assets/images/work/"+source alt=name)  
       .modal(id=target)
           .modal-content
             h2=name
             .close Close
-            img(src=source)
-            p= content
+            img(src="assets/images/work/"+source)
+            - if (source2)
+              img(src="assets/images/work/"+source2)
+            - if (source3)
+              img(src="assets/images/work/"+source3)
     
     
     

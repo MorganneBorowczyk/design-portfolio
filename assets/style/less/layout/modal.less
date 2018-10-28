@@ -23,16 +23,22 @@
     box-shadow: 0 7px 30px @filter-color-smooth;
     transform: translateY(100%);
     transition: transform .3s .3s @ease;
+    padding: 20px;
     h2 {
       text-align: center;
       color: @accent-color;
       line-height: 1;
-      padding: 30px 20px 0;
+      padding: 0 20px 0;
       display: block;
       margin-top: 0;
     }
+    img {
+      &:not(last-child) {
+        margin-bottom: 20px;
+      }
+    }
     p {
-      padding: 0 20px 20px;
+      padding: 0 0 20px;
       display: block;
       font-size: 16px;
     }
@@ -60,13 +66,18 @@
     }
   }
   @media screen and (min-width: @screen-xs) {
-    padding: 50px;
     .modal-content {
       padding-bottom: 1px;
       p {
         padding: 20px 50px 20px;
         font-size: 18px;
       }
+    }
+  }
+  @media screen and (min-width: @screen-m) {
+    padding: 50px;
+    .modal-content {
+      padding: 50px;
     }
   }
 }

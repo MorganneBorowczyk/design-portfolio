@@ -77,26 +77,53 @@
       <div class="content">
         <div class="grid">
           <div class="grid-sizer"></div>
-          <div class="gutter-sizer"></div><a href="#modal-project-mad" class="grid-item width2"><img src="assets/images/work/MAD-1.jpg" alt="Musée des Arts Décoratifs"></a>
+          <div class="gutter-sizer"></div><a href="#modal-project-mad" class="grid-item"><img src="assets/images/work/MAD-1.jpg" alt="Musée des Arts Décoratifs"></a>
               <div id="modal-project-mad" class="modal">
                 <div class="modal-content">
                   <h2>Musée des Arts Décoratifs</h2>
-                  <div class="close">Close</div><img src="assets/images/work/MAD-1.jpg">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem quam numquam earum nobis, eligendi consequuntur praesentium, repellat, hic libero labore impedit provident et reiciendis illo dignissimos aperiam officia, tempore incidunt?</p>
+                  <div class="close">Close</div><img src="assets/images/work/MAD-1.jpg"><img src="assets/images/work/MAD-2.jpg"><img src="assets/images/work/MAD-3.jpg">
+                </div>
+              </div><a href="#modal-one-more-time" class="grid-item"><img src="assets/images/work/one-more-time-with-feeling__an-act-of-revenge.jpg" alt="One More Time with Feeling"></a>
+              <div id="modal-one-more-time" class="modal">
+                <div class="modal-content">
+                  <h2>One More Time with Feeling</h2>
+                  <div class="close">Close</div><img src="assets/images/work/one-more-time-with-feeling__an-act-of-revenge.jpg"><img src="assets/images/work/one-more-time-with-feeling__women-are-like-fucking-3d.jpg"><img src="assets/images/work/one-more-time-with-feeling__girl-in-amber.jpg">
+                </div>
+              </div><a href="#modal-balmonts" class="grid-item"><img src="assets/images/work/balmonts__mockup-front.jpg" alt="Balmonts"></a>
+              <div id="modal-balmonts" class="modal">
+                <div class="modal-content">
+                  <h2>Balmonts</h2>
+                  <div class="close">Close</div><img src="assets/images/work/balmonts__mockup-front.jpg"><img src="assets/images/work/balmonts__mockup-back.jpg">
+                </div>
+              </div><a href="#modal-verminoise" class="grid-item"><img src="assets/images/work/verminoise__pochette-avant.jpg" alt="Verminoise"></a>
+              <div id="modal-verminoise" class="modal">
+                <div class="modal-content">
+                  <h2>Verminoise</h2>
+                  <div class="close">Close</div><img src="assets/images/work/verminoise__pochette-avant.jpg">
+                </div>
+              </div><a href="#modal-doomsnakes" class="grid-item"><img src="assets/images/work/collab__doomsnakes.jpg" alt="Collaboration with Manchester (UK) artist Doomsnakes"></a>
+              <div id="modal-doomsnakes" class="modal">
+                <div class="modal-content">
+                  <h2>Collaboration with Manchester (UK) artist Doomsnakes</h2>
+                  <div class="close">Close</div><img src="assets/images/work/collab__doomsnakes.jpg">
+                </div>
+              </div><a href="#modal-holispark" class="grid-item"><img src="assets/images/work/holispark__tshirt__cut-the-rope.jpg" alt="Holispark"></a>
+              <div id="modal-holispark" class="modal">
+                <div class="modal-content">
+                  <h2>Holispark</h2>
+                  <div class="close">Close</div><img src="assets/images/work/holispark__tshirt__cut-the-rope.jpg"><img src="assets/images/work/holispark__totebags.jpg">
                 </div>
               </div><a href="#modal-dejeuner" class="grid-item"><img src="assets/images/work/dejeuner-sur-lherbe.jpg" alt="Déjeuner sur l'Herbe"></a>
               <div id="modal-dejeuner" class="modal">
                 <div class="modal-content">
                   <h2>Déjeuner sur l'Herbe</h2>
                   <div class="close">Close</div><img src="assets/images/work/dejeuner-sur-lherbe.jpg">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem quam numquam earum nobis, eligendi consequuntur praesentium, repellat, hic libero labore impedit provident et reiciendis illo dignissimos aperiam officia, tempore incidunt?</p>
                 </div>
               </div><a href="#modal-toile-de-jouy" class="grid-item"><img src="assets/images/work/toile-de-jouy.png" alt="Toile de Jouy"></a>
               <div id="modal-toile-de-jouy" class="modal">
                 <div class="modal-content">
                   <h2>Toile de Jouy</h2>
                   <div class="close">Close</div><img src="assets/images/work/toile-de-jouy.png">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem quam numquam earum nobis, eligendi consequuntur praesentium, repellat, hic libero labore impedit provident et reiciendis illo dignissimos aperiam officia, tempore incidunt?</p>
                 </div>
               </div>
         </div>
@@ -123,12 +150,23 @@
             },50);
             $('body').addClass('stuck');
           });
-          $('.modal .close').on('click', function(){
-            $(this).parents('.modal').removeClass('visible');
+          //- Close modals
+          function closeModal() {
+            $('.modal').removeClass('visible');
             setTimeout(function(){
               $('.modal').removeClass('ready');
             },100);
             $('body').removeClass('stuck');
+          }
+          //--- Click close
+          $('.modal .close').on('click', function(){
+            closeModal();
+          });
+          //--- Click outside
+          $('.modal').on().click(function (event) {
+             if(!$(event.target).closest('.modal-content').length && !$(event.target).is('.modal-content')) {
+               closeModal();
+             }     
           });
         </script>
       </div>
