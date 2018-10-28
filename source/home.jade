@@ -26,9 +26,22 @@ block content
   script(src="assets/js/masonry.pkgd.min.js")
 
   script.
+    //- Masonry
     $('.grid').masonry({
       itemSelector: '.grid-item',
       columnWidth: '.grid-sizer',
       gutter: '.gutter-sizer',
       percentPosition: true
+    });
+  
+  
+  script.
+    //- Trigger modals
+    $('.grid-item').on('click', function(){
+      var modalTarget = $(this).attr('href');
+      console.log(modalTarget);
+      $(modalTarget).addClass('visible');
+    });
+    $('.modal .close').on('click', function(){
+      $(this).parents('.modal').removeClass('visible');
     });

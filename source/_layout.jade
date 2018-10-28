@@ -7,6 +7,8 @@ html(lang="en")
   include _head.jade
   body
   
+    //- MIXINS
+  
     mixin social(color)
       ul.social
         li
@@ -47,6 +49,18 @@ html(lang="en")
       a.btn.btn-large(href=link)= text
     mixin btn-small(text, link)
       a.btn.btn-small(href=link)= text
+      
+    mixin grid-item(id, target, source, name, size, content)
+      a.grid-item(class=size href="#"+target)
+        img(src=source alt=name)  
+      .modal(id=target)
+          .modal-content
+            h2=name
+            .close Close
+            img(src=source)
+            p= content
+    
+    
     
     include _header.jade
   
