@@ -261,11 +261,13 @@
         <script src="assets/js/masonry.pkgd.min.js"></script>
         <script>
           //- Masonry
-          $('.grid').masonry({
-            itemSelector: '.grid-item',
-            columnWidth: '.grid-sizer',
-            gutter: '.gutter-sizer',
-            percentPosition: true
+          $(document).ready(function(){
+            $('.grid').masonry({
+              itemSelector: '.grid-item',
+              columnWidth: '.grid-sizer',
+              gutter: '.gutter-sizer',
+              percentPosition: true
+            });
           });
           
           
