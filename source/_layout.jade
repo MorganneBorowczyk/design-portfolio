@@ -52,16 +52,27 @@ html(lang="en")
       
     mixin grid-item(name, id, size, target, source, source2, source3)
       a.grid-item(class=size href="#"+target)
-        img(src="assets/images/work/"+source alt=name)  
+        div
+          img(src="assets/images/work/"+source alt=name)
+        .gotcha
       .modal(id=target)
           .modal-content
             h2=name
             .close Close
-            img(src="assets/images/work/"+source)
+            .source
+              div
+                img(src="assets/images/work/"+source)
+              .gotcha
             - if (source2)
-              img(src="assets/images/work/"+source2)
+              .source
+                div
+                  img(src="assets/images/work/"+source2)
+                .gotcha
             - if (source3)
-              img(src="assets/images/work/"+source3)
+              .source
+                div
+                  img(src="assets/images/work/"+source3)
+                .gotcha
     
     
     
