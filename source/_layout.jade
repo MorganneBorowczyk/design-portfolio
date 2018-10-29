@@ -57,27 +57,27 @@ html(lang="en")
     mixin grid-item(name, id, size, target, source, source2, source3)
       a.grid-item(class=size href="#"+target)
         div
-          img(src="assets/images/work/"+source alt=name)
+          img(src="assets/images/work/thumbs/thumb_"+source alt=name)
         .gotcha
-      .modal(id=target)
-          .modal-content
-            h2=name
-            .close Close
-            .source
-              div
-                img(src="assets/images/work/"+source)
-              .gotcha
-            - if (source2)
-              .source
-                div
-                  img(src="assets/images/work/"+source2)
-                .gotcha
-            - if (source3)
-              .source
-                div
-                  img(src="assets/images/work/"+source3)
-                .gotcha
-    
+      //- .modal(id=target)
+      //-     .modal-content
+      //-       h2=name
+      //-       .close Close
+      //-       .source
+      //-         div
+      //-           img(src="assets/images/work/"+source)
+      //-         .gotcha
+      //-       - if (source2)
+      //-         .source
+      //-           div
+      //-             img(src="assets/images/work/"+source2)
+      //-           .gotcha
+      //-       - if (source3)
+      //-         .source
+      //-           div
+      //-             img(src="assets/images/work/"+source3)
+      //-           .gotcha
+      //- 
     
     
     include _header.jade
