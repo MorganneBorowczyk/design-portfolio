@@ -16,68 +16,68 @@ block content
       "project-mad",
       "",
       "modal-project-mad",
-      "MAD-2.jpg",
-      "MAD-1.jpg",
-      "MAD-3.jpg")
+      "MAD-2",
+      "MAD-1",
+      "MAD-3")
     +grid-item("Déjeuner sur l'Herbe",
       "dejeuner",
       "",
       "modal-dejeuner",
-      "dejeuner-sur-lherbe.jpg")
+      "dejeuner-sur-lherbe")
     +grid-item("Toile de Jouy",
       "toile-de-jouy",
       "",
       "modal-toile-de-jouy",
-      "toile-de-jouy.jpg")
+      "toile-de-jouy")
     +grid-item("Jethro Morris",
       "jethro",
       "",
       "modal-jethro",
-      "jethro-morris__mockup.jpg")
+      "jethro-morris__mockup")
     +grid-item("Verminoise",
       "verminoise",
       "",
       "modal-verminoise",
-      "verminoise__pochette-avant.jpg")
+      "verminoise__pochette-avant")
     +grid-item("Holispark",
       "holispark",
       "",
       "modal-holispark",
-      "holispark__tshirt__cut-the-rope.jpg",
-      "holispark__totebags.jpg")
+      "holispark__tshirt__cut-the-rope",
+      "holispark__totebags")
     +grid-item("Balmonts",
       "balmonts",
       "",
       "modal-balmonts",
-      "balmonts__mockup-front.jpg",
-      "balmonts__mockup-back.jpg")
+      "balmonts__mockup-front",
+      "balmonts__mockup-back")
     +grid-item("Collaboration with Manchester (UK) artist Doomsnakes",
       "doomsnakes",
       "",
       "modal-doomsnakes",
-      "collab__doomsnakes.jpg")
+      "collab__doomsnakes")
     +grid-item("Vampires from Space",
       "vampires",
       "",
       "modal-vampires",
-      "vampires-from-space.jpg")
+      "vampires-from-space")
     +grid-item("Shadow of A",
       "shadow",
       "",
       "modal-shadow",
-      "shadow-of-a.jpg")
+      "shadow-of-a")
     +grid-item("Cave",
       "cave",
       "",
       "modal-cave",
-      "cave.jpg")
+      "cave")
     +grid-item("One More Time with Feeling",
       "one-more-time",
       "",
       "modal-one-more-time",
-      "one-more-time-with-feeling__an-act-of-revenge.jpg",
-      "one-more-time-with-feeling__women-are-like-fucking-3d.jpg",
-      "one-more-time-with-feeling__girl-in-amber.jpg")
+      "one-more-time-with-feeling__an-act-of-revenge",
+      "one-more-time-with-feeling__women-are-like-fucking-3d",
+      "one-more-time-with-feeling__girl-in-amber")
 
   script(src="assets/js/masonry.pkgd.min.js")
   script(src="assets/js/imagesloaded.pkgd.min.js")
@@ -88,7 +88,7 @@ block content
   
   
   script.
-    $('.grid-item').on('click', function(){var modalTarget = $(this).attr('data-modal');$('body').append(modalTarget);setTimeout(function(){$('.modal').addClass('visible');},50);});function closeModal() {$('.modal').removeClass('visible');setTimeout(function(){$('.modal').remove();},100);$('body').removeClass('stuck');}$('body').on('click', '.modal .close', function(){console.log('close');closeModal();});$('body').on('click', '.modal', function(event) {console.log('close');if(!$(event.target).closest('.modal-content').length && !$(event.target).is('.modal-content')) {closeModal();}});  
+    $('.grid-item').on('click', function(){var modalTarget = $(this).attr('data-modal');$('body').addClass('stuck').append(modalTarget);setTimeout(function(){$('.modal').addClass('visible');},50);});function closeModal() {$('.modal').removeClass('visible');setTimeout(function(){$('.modal').remove();},100);$('body').removeClass('stuck');}$('body').on('click', '.modal .close', function(){console.log('close');closeModal();});$('body').on('click', '.modal', function(event) {console.log('close');if(!$(event.target).closest('.modal-content').length && !$(event.target).is('.modal-content')) {closeModal();}});  
     
   script#mcjs.
     !function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/cfde0b771ac267c40b7657119/14d085ef47b1eb6420cc509cb.js");

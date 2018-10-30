@@ -56,19 +56,19 @@ html(lang="en")
       
     mixin grid-item(name, id, size, description, source, source2, source3)
       - if (source3)
-        a.grid-item(class=size href="#" data-modal="<div class='modal'><div class='modal-content'><h2>"+name+"</h2><div class='close' title='close'></div><div class='source'><div><img class='lazy' src='assets/images/work/"+source+"' title='"+name+"' alt='"+description+"'></div><div class='gotcha'></div></div><div class='source'><div><img class='lazy' src='assets/images/work/"+source2+"' title='"+name+"' alt='"+description+"'></div><div class='gotcha'></div></div><div class='source'><div><img class='lazy' src='assets/images/work/"+source3+"' title='"+name+"' alt='"+description+"'></div><div class='gotcha'></div></div><p>"+description+"</p></div></div>")
+        a.grid-item(class=size href="#" data-modal="<div class='modal'><div class='modal-content'><h2>"+name+"</h2><div class='close' title='close'></div><div class='source'><div><img class='lazy' src='assets/images/work/"+source+".jpg' title='"+name+"' alt='"+description+"'></div><div class='gotcha'></div></div><div class='source'><div><img class='lazy' src='assets/images/work/"+source2+".jpg' title='"+name+"' alt='"+description+"'></div><div class='gotcha'></div></div><div class='source'><div><img class='lazy' src='assets/images/work/"+source3+".jpg' title='"+name+"' alt='"+description+"'></div><div class='gotcha'></div></div><p>"+description+"</p></div></div>")
           div
-            img.lazy(src="assets/images/work/"+source title=name alt=description)
+            img.lazy(src="assets/images/work/thumbs/thumb_"+source+".jpg" title=name alt=description)
           .gotcha    
       - else if (source2)
-        a.grid-item(class=size href="#" data-modal="<div class='modal'><div class='modal-content'><h2>"+name+"</h2><div class='close' title='close'></div><div class='source'><div><img class='lazy' src='assets/images/work/"+source+"' title='"+name+"' alt='"+description+"'></div><div class='gotcha'></div></div><div class='source'><div><img class='lazy' src='assets/images/work/"+source2+"' title='"+name+"' alt='"+description+"'></div><div class='gotcha'></div></div><p>"+description+"</p></div></div>")
+        a.grid-item(class=size href="#" data-modal="<div class='modal'><div class='modal-content'><h2>"+name+"</h2><div class='close' title='close'></div><div class='source'><div><img class='lazy' src='assets/images/work/"+source+".jpg' title='"+name+"' alt='"+description+"'></div><div class='gotcha'></div></div><div class='source'><div><img class='lazy' src='assets/images/work/"+source2+".jpg' title='"+name+"' alt='"+description+"'></div><div class='gotcha'></div></div><p>"+description+"</p></div></div>")
           div
-            img.lazy(src="assets/images/work/"+source title=name alt=description)
+            img.lazy(src="assets/images/work/thumbs/thumb_"+source+".jpg" title=name alt=description)
           .gotcha    
       - else
-        a.grid-item(class=size href="#" data-modal="<div class='modal'><div class='modal-content'><h2>"+name+"</h2><div class='close' title='close'></div><div class='source'><div><img class='lazy' src='assets/images/work/"+source+"' title='"+name+"' alt='"+description+"'></div><div class='gotcha'></div></div><p>"+description+"</p></div></div>")
+        a.grid-item(class=size href="#" data-modal="<div class='modal'><div class='modal-content'><h2>"+name+"</h2><div class='close' title='close'></div><div class='source'><div><img class='lazy' src='assets/images/work/"+source+".jpg' title='"+name+"' alt='"+description+"'></div><div class='gotcha'></div></div><p>"+description+"</p></div></div>")
           div
-            img.lazy(src="assets/images/work/"+source title=name alt=description)
+            img.lazy(src="assets/images/work/thumbs/thumb_"+source+".jpg" title=name alt=description)
           .gotcha    
     
     
