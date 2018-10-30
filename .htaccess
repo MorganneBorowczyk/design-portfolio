@@ -11,6 +11,10 @@ Header set Cache-Control "max-age=31536000, public"
 <filesMatch ".(css|js)$">
 Header set Cache-Control "max-age=2628000, public"
 </filesMatch>
+# One year for external files
+<filesMatch ".(mailchimp|googletagmanager).">
+Header set Cache-Control "max-age=31536000, public"
+</filesMatch>
 
 Header unset ETag
 FileETag none
