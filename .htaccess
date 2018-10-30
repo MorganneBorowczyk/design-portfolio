@@ -4,15 +4,19 @@ RewriteRule ^([^\.]+)$ $1.html [NC,L]
 
 ## contrôle du cache navigateur - Expire headers
 # One year for image files
-<filesMatch ".(jpg|jpeg|png|gif|ico)$">
+<filesMatch ".+(jpg|jpeg|png|gif|ico)$">
 Header set Cache-Control "max-age=31536000, public"
 </filesMatch>
 # One month for css and js
-<filesMatch ".(css|js)$">
+<filesMatch ".+(css|js)$">
 Header set Cache-Control "max-age=2628000, public"
 </filesMatch>
 # One year for external files
-<filesMatch ".(mailchimp|googletagmanager).">
+<filesMatch ".+(mailchimp|googletagmanager).+">
+Header set Cache-Control "max-age=31536000, public"
+</filesMatch>
+# One year for js dependencies
+<filesMatch ".+.\min\.js$">
 Header set Cache-Control "max-age=31536000, public"
 </filesMatch>
 
