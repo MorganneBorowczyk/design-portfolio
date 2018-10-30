@@ -6,3 +6,8 @@ footer
       p © Morganne Borowczyk 2018 — All rights reserved.
 
 script(src="assets/js/header.js")
+script(src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@8.17.0/dist/lazyload.min.js")
+script.
+  var myLazyLoad = new LazyLoad({
+    elements_selector: ".lazy"
+  });
