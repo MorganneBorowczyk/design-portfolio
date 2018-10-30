@@ -1,4 +1,4 @@
-//output:../index.html, pretty:true
+//output:../index.html, pretty:false
 
 extend _layout.jade
 
@@ -84,51 +84,11 @@ block content
 
   script.
     //- Masonry
-    $(document).ready(function(){
-      var $grid = $('.grid');
-      $grid.masonry({
-        itemSelector: '.grid-item',
-        columnWidth: '.grid-sizer',
-        gutter: '.gutter-sizer',
-        percentPosition: true,
-        stagger: 30,
-        transitionDuration: '0.3s'
-      });
-      $grid.imagesLoaded().progress( function() {
-        $grid.masonry('layout');
-      });
-    });
+    $(document).ready(function(){var $grid = $('.grid');$grid.masonry({itemSelector: '.grid-item',columnWidth: '.grid-sizer',gutter: '.gutter-sizer',percentPosition: true,stagger: 30,transitionDuration: '0.3s'});$grid.imagesLoaded().progress( function() {$grid.masonry('layout');});});
   
   
   script.
-    //- Trigger modals
-    $('.grid-item').on('click', function(){
-      var modalTarget = $(this).attr('data-modal');
-      $('body').append(modalTarget);
-      setTimeout(function(){
-        $('.modal').addClass('visible');
-      },50);
-    });
-    //- Close modals
-    function closeModal() {
-      $('.modal').removeClass('visible');
-      setTimeout(function(){
-        $('.modal').remove();
-      },100);
-      $('body').removeClass('stuck');
-    }
-    //--- Click close
-    $('body').on('click', '.modal .close', function(){
-      console.log('close');
-      closeModal();
-    });
-    //--- Click outside
-    $('body').on('click', '.modal', function(event) {
-      console.log('close');
-      if(!$(event.target).closest('.modal-content').length && !$(event.target).is('.modal-content')) {
-        closeModal();
-      }
-    });  
+    $('.grid-item').on('click', function(){var modalTarget = $(this).attr('data-modal');$('body').append(modalTarget);setTimeout(function(){$('.modal').addClass('visible');},50);});function closeModal() {$('.modal').removeClass('visible');setTimeout(function(){$('.modal').remove();},100);$('body').removeClass('stuck');}$('body').on('click', '.modal .close', function(){console.log('close');closeModal();});$('body').on('click', '.modal', function(event) {console.log('close');if(!$(event.target).closest('.modal-content').length && !$(event.target).is('.modal-content')) {closeModal();}});  
     
   script#mcjs.
     !function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/cfde0b771ac267c40b7657119/14d085ef47b1eb6420cc509cb.js");
