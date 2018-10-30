@@ -1,7 +1,7 @@
 //main: ../app.less
 
 .modal {
-  display: none;
+  display: block;
   z-index: 2;
   position: relative;
   background-color: @filter-color-smooth;
@@ -52,13 +52,15 @@
     text-transform: uppercase;
     font-size: 12px;
     letter-spacing: 2px;
-    transition: color .3s @ease;
-    &:hover {
-      color: @accent-color;
+    &::before {
+      transition: color .3s @ease;
+      content: "Close";
     }
-  }
-  &.ready {
-    display: block;
+    &:hover {
+      &::before {
+        color: @accent-color;
+      }
+    }
   }
   &.visible {
     opacity: 1;

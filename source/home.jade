@@ -96,29 +96,29 @@ block content
   script.
     //- Trigger modals
     $('.grid-item').on('click', function(){
-      var modalTarget = $(this).attr('href');
-      console.log(modalTarget);
-      $(modalTarget).addClass('ready');
+      var modalTarget = $(this).attr('data-modal');
+      $('body').append(modalTarget);
       setTimeout(function(){
-        $(modalTarget).addClass('visible');
+        $('.modal').addClass('visible');
       },50);
-      $('body').addClass('stuck');
     });
     //- Close modals
     function closeModal() {
       $('.modal').removeClass('visible');
       setTimeout(function(){
-        $('.modal').removeClass('ready');
+        $('.modal').remove();
       },100);
       $('body').removeClass('stuck');
     }
     //--- Click close
-    $('.modal .close').on('click', function(){
+    $('body').on('click', '.modal .close', function(){
+      console.log('close');
       closeModal();
     });
     //--- Click outside
-    $('.modal').on().click(function (event) {
-       if(!$(event.target).closest('.modal-content').length && !$(event.target).is('.modal-content')) {
-         closeModal();
-       }     
-    });
+    $('body').on('click', '.modal', function(event) {
+      console.log('close');
+      if(!$(event.target).closest('.modal-content').length && !$(event.target).is('.modal-content')) {
+        closeModal();
+      }     
+    });  

@@ -55,29 +55,21 @@ html(lang="en")
       a.btn.btn-small(href=link)= text
       
     mixin grid-item(name, id, size, target, source, source2, source3)
-      a.grid-item(class=size href="#"+target)
-        div
-          img(src="assets/images/work/"+source alt=name)
-        .gotcha
-      .modal(id=target)
-          .modal-content
-            h2=name
-            .close Close
-            .source
-              div
-                img(src="assets/images/work/"+source)
-              .gotcha
-            - if (source2)
-              .source
-                div
-                  img(src="assets/images/work/"+source2)
-                .gotcha
-            - if (source3)
-              .source
-                div
-                  img(src="assets/images/work/"+source3)
-                .gotcha
-    
+      - if (source3)
+        a.grid-item(class=size href="#"+target data-modal="<div id='"+target+"' class='modal'><div class='modal-content'><h2>"+name+"</h2><div class='close' title='close'></div><div class='source'><div><img src='assets/images/work/"+source+"'></div><div class='gotcha'></div></div><div class='source'><div><img src='assets/images/work/"+source2+"'></div><div class='gotcha'></div></div><div class='source'><div><img src='assets/images/work/"+source3+"'></div><div class='gotcha'></div></div></div></div>")
+          div
+            img(src="assets/images/work/"+source alt=name)
+          .gotcha    
+      - else if (source2)
+        a.grid-item(class=size href="#"+target data-modal="<div id='"+target+"' class='modal'><div class='modal-content'><h2>"+name+"</h2><div class='close' title='close'></div><div class='source'><div><img src='assets/images/work/"+source+"'></div><div class='gotcha'></div></div><div class='source'><div><img src='assets/images/work/"+source2+"'></div><div class='gotcha'></div></div></div></div>")
+          div
+            img(src="assets/images/work/"+source alt=name)
+          .gotcha    
+      - else
+        a.grid-item(class=size href="#"+target data-modal="<div id='"+target+"' class='modal'><div class='modal-content'><h2>"+name+"</h2><div class='close' title='close'></div><div class='source'><div><img src='assets/images/work/"+source+"'></div><div class='gotcha'></div></div></div></div>")
+          div
+            img(src="assets/images/work/"+source alt=name)
+          .gotcha    
     
     
     include _header.jade
