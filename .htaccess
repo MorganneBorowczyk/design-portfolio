@@ -2,6 +2,9 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^\.]+)$ $1.html [NC,L]
 
+redirect 301 /index.html /
+redirect 301 /about.html /about
+
 ## contrôle du cache navigateur - Expire headers
 <IfModule mod_expires.c>
   ExpiresActive On
