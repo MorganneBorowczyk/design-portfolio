@@ -33,3 +33,8 @@ redirect 301 /about.html /about
 
 Header unset ETag
 FileETag none
+
+## Compress files
+<files *.html>
+SetOutputFilter DEFLATE
+</files>
