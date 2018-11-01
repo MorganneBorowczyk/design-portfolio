@@ -38,3 +38,6 @@ FileETag none
 <files *.html>
 SetOutputFilter DEFLATE
 </files>
+<files *.jpg>
+SetOutputFilter DEFLATE
+</files>
