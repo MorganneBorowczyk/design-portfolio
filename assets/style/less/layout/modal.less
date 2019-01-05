@@ -1,7 +1,10 @@
 //main: ../app.less
 
 .modal {
-  display: block;
+  display: none;
+  &.visible {
+    display: block;
+  }
   z-index: 2;
   position: relative;
   background-color: @filter-color-smooth;
@@ -34,9 +37,9 @@
     }
     .source {
       position: relative;
-      &:not(:last-child) {
+      // &:not(:last-child) {
         margin-bottom: 20px;
-      }
+      // }
     }
     p {
       padding: 0 0 20px;
