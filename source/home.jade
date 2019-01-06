@@ -8,7 +8,9 @@ block var
   - canonical = "https://morganneborowczyk.design/index.html"
 
 block content
-  h1 Illustrator & Designer from Lille, France
+  .block-title
+    h1 Étudiante en design et illustration à Lille
+    h3 À la recherche d'un stage pour l'été 2019
   .grid
     .grid-sizer
     .gutter-sizer
@@ -27,10 +29,6 @@ block content
       "",
       "Here's my take on the famous painting Déjeuner sur l'Herbe by Edouard Manet.",
       "dejeuner-sur-lherbe")
-    //- .grid-item.encart
-    //-   h3 Like what you see?
-    //-   p
-    //-     a.btn SHop
     +grid-item("The Garden of the Witch",
       "toile-de-jouy",
       "",
@@ -41,6 +39,9 @@ block content
       "",
       "Album artwork for Australian artist Jethro Morris.",
       "jethro-morris__mockup")
+    .grid-item.encart
+      h3 Like what you see?
+      +btn-small('Hire me!', 'contact')
     +grid-item("Verminoise",
       "verminoise",
       "",
