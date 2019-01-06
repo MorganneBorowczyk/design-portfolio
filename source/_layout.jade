@@ -12,6 +12,9 @@ html(lang="en")
       <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TNK7SR9" height="0" width="0" style="display:none;visibility:hidden"></iframe>
   
     //- MIXINS
+    
+    mixin tri(category)
+      p(data-rel=category)=category
   
     mixin social(color)
       ul.social
@@ -54,8 +57,8 @@ html(lang="en")
     mixin btn-small(text, link)
       a.btn.btn-small(href=link)= text
       
-    mixin grid-item(name, id, size, description, source, source2, source3)
-      a.grid-item(class=size href="#")
+    mixin grid-item(name, category, id, size, description, source, source2, source3)
+      a.grid-item(class=size+" "+category href="#")
           div
             img(src="assets/images/work/"+source+".jpg" alt=name)
           .gotcha

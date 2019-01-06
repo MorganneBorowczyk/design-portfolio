@@ -11,6 +11,13 @@ block content
   .block-title
     h1 Étudiante en design et illustration à Lille
     h3 À la recherche d'un stage pour l'été 2019
+    h4 Portfolio
+  nav.tri
+    +tri('all')
+    +tri('illustration')
+    //- +tri('edition')
+    //- +tri('digital')
+    +tri('band-merch')
   .grid
     .grid-sizer
     .gutter-sizer
@@ -18,6 +25,7 @@ block content
     //- (name, id, size, description, source, source2, source3)
     
     +grid-item("Musée des Arts Décoratifs",
+      "illustration",
       "project-mad",
       "",
       "A series of illustrations made with furniture referenced from the archives of the Musée des Arts Décoratifs (Paris).",
@@ -25,61 +33,74 @@ block content
       "MAD-1",
       "MAD-3")
     +grid-item("Déjeuner sur l'Herbe",
+      "illustration",
       "dejeuner",
       "",
       "Here's my take on the famous painting Déjeuner sur l'Herbe by Edouard Manet.",
       "dejeuner-sur-lherbe")
     +grid-item("The Garden of the Witch",
+      "illustration",
       "toile-de-jouy",
       "",
       "A pattern made with a red ballpoint pen, inspired by a French medieval style of tapestry called 'toile de jouy'.",
       "toile-de-jouy")
     +grid-item("Jethro Morris",
+      "band-merch",
       "jethro",
       "",
       "Album artwork for Australian artist Jethro Morris.",
       "jethro-morris__mockup")
-    .grid-item.encart
-      h3 Like what you see?
-      +btn-small('Hire me!', 'contact')
+      
+    //- .grid-item.encart
+    //-   h3 Like what you see?
+    //-   +btn-small('Hire me!', 'contact')
+      
     +grid-item("Verminoise",
+      "band-merch",
       "verminoise",
       "",
       "Album artwork for Verminoise, a local music association.",
       "verminoise__pochette-avant")
     +grid-item("Holispark",
+      "band-merch",
       "holispark",
       "",
       "A few merch items for the band Holispark.",
       "holispark__tshirt__cut-the-rope",
       "holispark__totebags")
     +grid-item("Balmonts",
+      "records band-merch",
       "balmonts",
       "",
       "EP artwork for the Canadian Lo-Fi House duo Balmonts.",
       "balmonts__mockup-front",
       "balmonts__mockup-back")
     +grid-item("Collaboration with Doomsnakes",
+      "illustration",
       "doomsnakes",
       "",
       "A collab illustration with Manchester artist Doomsnakes",
       "collab__doomsnakes")
     +grid-item("Vampires from Space",
+      "illustration",
       "vampires",
       "",
       "Vampires. From Space! Ever heard of them?",
       "vampires-from-space")
-    +grid-item("Shadow of A",
-      "shadow",
-      "",
-      "Shadow of A t-shirt (sold out)",
-      "shadow-of-a")
     +grid-item("Cave",
+      "illustration",
       "cave",
       "",
       "Inspired by some caves I've visited in 2016. Brush pen on paper",
       "cave")
+    +grid-item("Shadow of A",
+      "illustration",
+      "shadow",
+      "",
+      "Shadow of A t-shirt (sold out)",
+      "shadow-of-a")
     +grid-item("One More Time with Feeling",
+      "illustration",
       "one-more-time",
       "",
       "A comission for the editor of One More Time with Feeling, a documentary about Nick Cave and the making of his album Skeleton Tree.",
@@ -89,14 +110,8 @@ block content
 
   script(src="assets/js/masonry.pkgd.min.js")
   script(src="assets/js/imagesloaded.pkgd.min.js")
-
-  script.
-    //- Masonry
-    $(document).ready(function(){var $grid = $('.grid');$grid.masonry({itemSelector: '.grid-item',columnWidth: '.grid-sizer',gutter: '.gutter-sizer',percentPosition: true,stagger: 30,transitionDuration: '0.3s'});$grid.imagesLoaded().progress( function() {$grid.masonry('layout');});});
   
+  script(src="assets/js/home.js")
   
-  script.
-    $('.grid-item').on('click', function(){var modalTarget = $(this).next('.modal');$(modalTarget).addClass('ready');setTimeout(function(){$(modalTarget).addClass('visible');},50);$('body').addClass('stuck');});function closeModal() {$('.modal').removeClass('visible');setTimeout(function(){$('.modal').removeClass('ready');},100);$('body').removeClass('stuck');}$('.modal .close').on('click', function(){closeModal();});$('.modal').on().click(function (event) {if(!$(event.target).closest('.modal-content').length && !$(event.target).is('.modal-content')) {closeModal();} });
-    
   script#mcjs.
     !function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/cfde0b771ac267c40b7657119/14d085ef47b1eb6420cc509cb.js");
